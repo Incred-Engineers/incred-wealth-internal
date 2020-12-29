@@ -37,7 +37,7 @@
                     </button>
                     <span class="caret" style="margin-top:15px;margin-left:-12px;"></span>
                     <ul class="dropdown-menu" role="menu2" aria-labelledby="menu2">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" onclick="logout()">Logout</a></li>
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="#"></a></li>
                     </ul>
                   </div>
@@ -426,6 +426,19 @@
                  var time = hour + minute + second ;
                  document.getElementById('applicationLogin').value = userdate + time;
             }
+        }
+        
+        function logout(){
+            document.getElementById('thankSection').style.display = 'none';
+            document.getElementById('rmSection').style.display = 'none';
+            document.getElementById('main').style.display  ='block';
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('merchantName').style.display = 'none';
+            document.getElementById('loginDropDown').style.display = 'block';
+            document.getElementById('InputEmail1').style.borderColor = "#646464";
+            document.getElementById('InputEmail1').value = " ";
+            document.getElementById('InputPassword1').style.borderColor = '#646464';
+            document.getElementById('InputPassword1').value  = '';
         }
     </script>
    
