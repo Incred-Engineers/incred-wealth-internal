@@ -174,7 +174,9 @@
             if(!usernameValue  &&  !userpasswordValue){
                 document.getElementById('InputEmail1').style.borderColor = "red";
                 document.getElementById('InputPassword1').style.borderColor = "red";
-                document.getElementById('loginError').innerText = 'Please enter username and password to login *'
+                document.getElementById('emailValue').innerText  = 'Please enter valid username *';
+                document.getElementById('loginError').innerText = 'Please enter username and password to login *';
+                document.getElementById('passwordValue').innerText  = 'Please enter valid password *';
             }
             else if(!usernameValue){
                 document.getElementById('InputEmail1').style.borderColor = "#fff";
