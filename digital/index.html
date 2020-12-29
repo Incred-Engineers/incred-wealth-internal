@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="author" content="">
+            <meta http-equiv="cache-control" content="max-age=120" />
+            <link rel="icon" href="img/icon.png">
+            <title>InCred - Borrow. With Confidence.</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <link href="./style.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="col-md-8">
+                    <img src="../img/c-logo.png" alt="Girl in a jacket" width="210">
+                </div>
+                <div class="col-md-4">
+                <div class="dropdown" id="loginDropDown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">RM Login For Onboarding
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go-preproduction.signzy.app/incred_wealth/login">Admin Dashboard</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go-preproduction.signzy.app/incred_wealth/login">RM App Dashboard</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">RM Login For Onboarding</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown" id="merchantName">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">
+                    </button>
+                    <span class="caret" style="margin-top:15px;margin-left:-12px;"></span>
+                    <ul class="dropdown-menu" role="menu2" aria-labelledby="menu2">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"></a></li>
+                    </ul>
+                  </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+        <div id="snackbar"></div>
+
+           <div class="container" id="main" >
+                    <section class="loginSection" id="loginSection">
+                            <p class="login">Login</p>
+                            <span class="firstSpan">to continue with onboarding </span>
+                            <div class="loginForm">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Username</label>
+                                  <input  class="input" type="email" class="form-control" id="InputEmail1"  aria-describedby="emailHelp" placeholder="">
+                                  <span class="error" id="emailValue"></span>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Password</label>
+                                  <input  class="input" type="password" class="form-control" id="InputPassword1"  placeholder="">
+                                  <br>
+                                  <span class="error" id="passwordValue"></span>
+                                </div>
+                                <button  class="inputbutton" type="submit" class="btn btn-primary" onclick="loginSumbit()" >Login</button>
+                                <br>
+                                <span class="error" id="loginError"></span>
+                            </div>
+                    </section>
+            </div>
+
+                    <section class="rmSection" id="rmSection">
+                        <div class="container" style="width:800px;margin-top:20px;border:1px solid gray;">
+                        <p class="application">Create Application</p>
+                        <div style="border-bottom:1px solid #d3d3d3;">
+                            <span class="rmjourney" id="rmjourney" onclick="journey('rmJourney')">
+                                RM Assisted Journey
+                            </span>
+                            <span class="diyjourney" id="diyJourney" onclick="journey('client')">
+                                   Client Journey
+                            </span>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-sm-12 line">
+                          <div class="loginFormapplication">
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                    <label for="exampleInputEmail1" id="rmName">RM Name</label>
+                                    <input  class="input" type="text" class="form-control" id="rmNameValue"  aria-describedby="emailHelp" placeholder="">
+                                    <span class="error" id="rmnameError"></span>
+                                </div>
+                               <div class="form-group">
+                                    <label for="exampleInputPassword1" id="rmEmail" >RM Email ID</label>
+                                    <input  class="input" type="email" class="form-control" id="rmemailValue"  placeholder="">
+                                    <br>
+                                    <span class="error" id="rmemailError"></span>
+                                </div>
+                            </div>
+                               <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1" id="rmMobile">RM Mobile Number</label>
+                                        <input  class="input"  type="text" pattern="\d*" maxlength="10" class="form-control" id="rmMobileValue" length="10" aria-describedby="emailHelp" placeholder="">
+                                        <br>
+                                        <span class="error" id="moblieValue"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="loginFormapplication">
+                            <div class="col-md-6" style="margin-bottom:30px;">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1" >Create Application Login</label>
+                                  <input  class="input" type="text" class="form-control" id="applicationLogin"  aria-describedby="emailHelp" placeholder=""
+                                  disabled>
+                                  <br>
+                                  <span class="error" id="applicationError"></span>
+                                </div>
+                            </div>
+                            <div class='col-md-6' style="margin-bottom:30px;">
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1" >Create Application Password</label>
+                                  <input  class="input" type="password" class="form-control" id="applicationPassword"  placeholder="">
+                                  <br>
+                                  <span class="error" id="rmPassworderror"></span>
+                                </div>
+                            </div>
+                                <button  class="createButton" type="submit" class="btn btn-primary" id="merchantButton" 
+                                onclick="createApplication()" value="" ></button>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="thankSection" id="thankSection">
+                    <div class="container" id="main">
+                        <i class="fa fa-check-circle fa-5x" aria-hidden="true" style="font-weight: 50px; color:#6994A5; width: 60px;
+                        height: 60px;margin: 0 165px 29px;margin-top:30px;"></i>
+                    <div class="col-lg-12">
+                    <p id="para">Application Credentials Created !</p>
+                    <div>
+                        <p id="msg">To start the onboarding ourney, click on the link sent to:<span class="bold" id="emailIdfinal"></span></p>
+                    </div>
+                    </div>
+                    <button  class="finalButton" type="submit" class="btn btn-primary" onclick="createAnotherapplication()" >Create Another Application</button>
+                </div>
+            </section>
+
+
+            <!-- <div id="login" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Please enter the username and password to login</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+    </body>
+    <script>
+        function loginSumbit() {
+            var usernameValue = document.getElementById('InputEmail1').value ;
+            var userpasswordValue  = document.getElementById('InputPassword1').value
+
+            if(!usernameValue  &&  !userpasswordValue){
+                document.getElementById('InputEmail1').style.borderColor = "red";
+                document.getElementById('InputPassword1').style.borderColor = "red";
+                document.getElementById('loginError').innerText = 'Please enter username and password to login *'
+            }
+            else if(!usernameValue){
+                document.getElementById('InputEmail1').style.borderColor = "#fff";
+                document.getElementById('InputEmail1').style.borderColor = "red";
+                document.getElementById('emailValue').innerText  = 'Please enter valid username *';
+                document.getElementById('passwordValue').innerText  = '';
+                document.getElementById('loginError').innerText = ''
+                 
+            }else if(!userpasswordValue){
+                document.getElementById('passwordValue').innerText  = 'Please enter valid password *';
+                document.getElementById('emailValue').innerText  = '';
+                document.getElementById('InputEmail1').style.borderColor = "#646464";
+                document.getElementById('InputPassword1').style.borderColor = "red";
+                document.getElementById('loginError').innerText ='';
+            }
+            else{
+            document.getElementById('emailValue').innerText = '';
+            document.getElementById('passwordValue').innerText = '';
+            document.getElementById('passwordValue').innerText = '';
+            document.getElementById('loginError').innerText = '';
+            document.getElementById('InputPassword1').style.borderColor = "#fff";
+            document.getElementById('InputEmail1').style.borderColor= '#fff';
+
+            let leadString = JSON.stringify({
+                "username": document.getElementById('InputEmail1').value,
+                "password": document.getElementById('InputPassword1').value,
+                "realm": "incred_wealth"
+            });
+            let url = "https://go-preproduction.signzy.app/api/backopsusers/login"
+            $.ajax(url, {
+                crossDomain: true,
+                method: 'POST',
+                data: leadString,
+                contentType: "application/json",
+                timeout: 5000,
+                error: function (err) {
+                    console.log("error")
+                    var x = document.getElementById('snackbar');
+                    let value = JSON.parse(err.responseText)
+                    if(value && value.error && value.error.statusCode == 400){
+                        document.getElementById('InputPassword1').style.borderColor = "red";
+                        document.getElementById('InputEmail1').style.borderColor = "red";
+                        document.getElementById('loginError').innerText = 'Please enter valid credentials *'
+                        document.getElementById('passwordValue').innerText = '';
+                    // document.getElementById('snackbar').innerText = 'Please enter valid credentials';
+                    // x.className = "show";
+                    // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+                    }else if(value && value.error && value.error.statusCode == 401){
+                        document.getElementById('InputEmail1').style.borderColor = "#646464";
+                        document.getElementById('InputPassword1').style.borderColor = "red";
+                        document.getElementById('loginError').innerText = '';
+                        document.getElementById('passwordValue').innerText = 'Your password is invalid. Please try again *'
+                    }
+                }
+            })
+                .done(function (result) {
+                    if (result) {
+                        document.getElementById('loginSection').style.display = 'none';
+                        document.getElementById('rmSection').style.display = 'block';
+                        document.getElementById('main').style.display = 'none';
+                        document.getElementById('merchantButton').innerText = 'Create RM Assisted Application';
+                        if(result.data && result.data.username){
+                           const username = result.data.username;
+                           localStorage.setItem('userName',JSON.stringify(result.data.username));
+                           const currentDate = new Date();
+                           const currentDayOfMonth = currentDate.getDate();
+                           const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+                           const currentYear = currentDate.getFullYear();
+                           let month = (currentMonth + 1).toString();
+                           let year = currentYear.toString();
+                           const dateString = currentDayOfMonth.toString() + month  + year;
+                           const userdate = username + dateString;
+                           var hour = currentDate.getHours().toString();
+                           var minute = currentDate.getMinutes().toString();
+                           var second = currentDate.getSeconds().toString();
+                           var time = hour + minute + second ;
+                           document.getElementById('applicationLogin').value = userdate + time;
+                        }
+                        document.getElementById('loginDropDown').style.display ='none';
+                        document.getElementById('menu2').innerHTML = result.data.username;
+                        document.getElementById('merchantName').style.display = 'block';
+                        localStorage.setItem('wealthLogin', JSON.stringify(result));
+                    }
+                    else {
+                        localStorage.setItem('leadStoreDB', JSON.stringify(result))
+                        // window.alert(result.message) 
+                    }
+                });
+            }
+        }
+    
+        function journey(client) {
+    
+            if (client == 'client') {
+                document.getElementById('diyJourney').style.borderBottom = '3px solid #f17b20';
+                document.getElementById('diyJourney').style.color = '#f17b20';
+                document.getElementById('rmjourney').style.borderBottom = '3px solid #d3d3d3';
+                document.getElementById('rmjourney').style.color = '#d3d3d3';
+                document.getElementById('rmName').innerHTML = 'Client Name';
+                document.getElementById('rmEmail').innerHTML = 'Client Email ID';
+                document.getElementById('rmMobile').innerHTML = 'Client Mobile Number';
+                document.getElementById('merchantButton').innerText = 'Create Client Application';
+    
+            } else {
+                document.getElementById('rmjourney').style.borderBottom = '3px solid #f17b20';
+                document.getElementById('rmjourney').style.color = '#f17b20';
+                document.getElementById('diyJourney').style.borderBottom = '3px solid #d3d3d3';
+                document.getElementById('diyJourney').style.color = '#d3d3d3';
+                document.getElementById('rmName').innerHTML = 'RM Name';
+                document.getElementById('rmEmail').innerHTML = 'RM Email ID';
+                document.getElementById('rmMobile').innerHTML = 'RM Mobile Number';
+                document.getElementById('merchantButton').innerText = 'Create RM Assisted Application';
+
+            }
+        }
+    
+    
+        function createApplication() {
+            let mobile = document.getElementById('rmMobileValue').value;
+            let email = document.getElementById('rmemailValue').value;
+            let name = document.getElementById('rmNameValue').value;
+            let username  = document.getElementById('applicationLogin').value;
+            let password = document.getElementById('applicationPassword').value;
+            if(mobile && email && name && username  && password) {
+            if(mobile.length != 10){
+                document.getElementById('moblieValue').innerText = 'Please enter valid Moblie Number';
+                document.getElementById('rmemailError').innerText = '';
+                document.getElementById('rmnameError').innerText = '';
+                document.getElementById('applicationError').innerText ='';
+                document.getElementById('rmPassworderror').innerText = '';
+                document.getElementById('rmemailValue').style.borderColor = '#646464';   
+            }else{
+            let loginStorage = JSON.parse(localStorage.getItem('wealthLogin'));
+            let applicationId = loginStorage.data.applicationId;
+            let authorization = loginStorage.id;
+            let merchantData = JSON.stringify({
+                         "mobile": document.getElementById('rmMobileValue').value,
+                         "email" : document.getElementById('rmemailValue').value,
+                         "name": document.getElementById('rmNameValue').value,
+                         "username": document.getElementById('applicationLogin').value,
+                         "password":document.getElementById('applicationPassword').value,
+                         "flowId":loginStorage.data.flowIds[0],
+                         "realm":loginStorage.data.realm
+
+                })
+
+            let url = `https://go-preproduction.signzy.app/api/applications/${applicationId}/merchants`
+                $.ajax(url, {
+                    crossDomain: true,
+                    method: 'POST',
+                    data: merchantData,
+                    headers: {
+                            'Authorization': "Basic " + btoa(authorization)
+                    },
+                    contentType: "application/json",
+                    timeout: 5000,
+                    error: function (err) {
+                        var x = document.getElementById('snackbar');
+                        let value = JSON.parse(err.responseText)
+                        document.getElementById('snackbar').innerText = value.error.message;
+                        x.className = "show";
+                        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+                    }
+                })
+                    .done(function (result) {
+                        if (result) {
+                            localStorage.setItem('merchantData', JSON.stringify(result.response))
+                            document.getElementById('rmSection').style.display = 'none';
+                            document.getElementById('thankSection').style.display = 'block';
+                            document.getElementById('emailIdfinal').innerText = document.getElementById('rmemailValue').value;
+                            document.getElementById('menu2').innerText = document.getElementById('rmemailValue').value;
+                        }
+                        else {
+                            localStorage.setItem('leadStoreDB', JSON.stringify(result.response))
+                            // window.alert(result.message) 
+                        }
+                    });
+            }
+            }
+            // else if( !mobile && !email && !name && !username && !password){
+            //     document.getElementById('rmemailValue').style.borderColor = 'red';         
+            //     document.getElementById('rmemailError').innerText = 'Please enter a valid Email Id';
+            //     document.getElementById('moblieValue').innerText = 'Please enter a Moblie Number';
+            //     document.getElementById('rmMobileValue').style.borderColor = 'red';
+            //     document.getElementById('rmnameError').innerText = 'Please enter a name';
+            //     document.getElementById('rmNameValue').style.borderColor ='red';
+            //     document.getElementById('applicationLogin').style.borderColor ="red";
+            //     document.getElementById('applicationError').innerText = 'Application login must be minimum 3 characters, with an alphabet as the first character and must contain a number.';
+            //     document.getElementById('applicationPassword').style.borderColor = "red";
+            //     document.getElementById('rmPassworderror').innerText = 'Please enter a password';
+            // }
+            else if(!name){
+                document.getElementById('moblieValue').innerText = '';
+                document.getElementById('rmemailError').innerText = '';
+                document.getElementById('applicationError').innerText ='';
+                document.getElementById('rmnameError').innerText = 'Please enter a name';
+                document.getElementById('rmPassworderror').innerText = '';
+                document.getElementById('rmNameValue').style.borderColor = 'red';         
+            }
+            else if(!mobile ){
+                   document.getElementById('moblieValue').innerText = 'Please enter a Moblie Number';
+                   document.getElementById('rmemailError').innerText = '';
+                   document.getElementById('rmnameError').innerText = '';
+                   document.getElementById('applicationError').innerText ='';
+                   document.getElementById('rmPassworderror').innerText = '';
+                   document.getElementById('rmNameValue').style.borderColor = '#646464';         
+            }else if(!email){
+                document.getElementById('rmemailError').innerText = 'Please enter a valid Email Id';
+                document.getElementById('moblieValue').innerText = '';
+                document.getElementById('rmnameError').innerText = '';
+                document.getElementById('applicationError').innerText = '';
+                document.getElementById('rmPassworderror').innerText = '';
+                document.getElementById('rmMobileValue').style.borderColor ='#646464';
+            }else if(!username){
+                document.getElementById('applicationError').innerText = 'Application login must be minimum 3 characters, with an alphabet as the first character and must contain a number.'
+                document.getElementById('moblieValue').innerText = '';
+                document.getElementById('rmemailError').innerText = '';
+                document.getElementById('rmnameError').innerText  = '';
+                document.getElementById('rmPassworderror').innerText = '';
+            }else if(!password){
+                document.getElementById('moblieValue').innerText = '';
+                document.getElementById('rmemailError').innerText = '';
+                document.getElementById('rmnameError').innerText  = '';
+                document.getElementById('applicationError').innerText = '';
+                document.getElementById('rmPassworderror').innerText = 'Please enter a password';
+            }
+
+        }
+
+        function createAnotherapplication() {
+             document.getElementById('thankSection').style.display = 'none';
+             document.getElementById('rmSection').style.display = 'block';
+             let newUser = JSON.parse(localStorage.getItem('userName'));
+             if( newUser ){
+                 const username = newUser;
+                 const currentDate = new Date();
+                 const currentDayOfMonth = currentDate.getDate();
+                 const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+                 const currentYear = currentDate.getFullYear();
+                 let month = (currentMonth + 1).toString();
+                 let year = currentYear.toString();
+                 const dateString = currentDayOfMonth.toString() + month  + year;
+                 const userdate = username + dateString;
+                 var hour = currentDate.getHours().toString();
+                 var minute = currentDate.getMinutes().toString();
+                 var second = currentDate.getSeconds().toString();
+                 var time = hour + minute + second ;
+                 document.getElementById('applicationLogin').value = userdate + time;
+            }
+        }
+    </script>
+   
+</html>

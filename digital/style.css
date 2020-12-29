@@ -1,0 +1,278 @@
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Avenir Book'
+}
+@font-face {
+    font-family: 'Avenir Black';
+    src: url(../fonts/Avenir-Black.eot);
+    src: url('../fonts/Avenir-Black.eot?#iefix') format('embedded-opentype'), url(../fonts/Avenir-Black.woff2) format('woff2'), url(../fonts/Avenir-Black.woff) format('woff'), url(../fonts/Avenir-Black.ttf) format('truetype'), url('../fonts/Avenir-Black.svg#Avenir Black') format('svg')
+}
+
+@font-face {
+    font-family: 'Avenir Book';
+    src: url(../fonts/Avenir-Book.eot);
+    src: url('../fonts/Avenir-Book.eot?#iefix') format('embedded-opentype'), url(../fonts/Avenir-Book.woff2) format('woff2'), url(../fonts/Avenir-Book.woff) format('woff'), url(../fonts/Avenir-Book.ttf) format('truetype'), url('../fonts/Avenir-Book.svg#Avenir Book') format('svg')
+}
+
+p.copy {
+    font-size: 16px;
+    padding-top: 14px
+}
+
+@font-face {
+    font-family: 'Avenir Medium';
+    src: url(../fonts/Avenir-Medium.eot);
+    src: url('../fonts/Avenir-Medium.eot?#iefix') format('embedded-opentype'), url(../fonts/Avenir-Medium.woff2) format('woff2'), url(../fonts/Avenir-Medium.woff) format('woff'), url(../fonts/Avenir-Medium.ttf) format('truetype'), url('../fonts/Avenir-Medium.svg#Avenir Medium') format('svg')
+}
+
+.form-group {
+    margin-bottom: 35px;
+}
+.dropdown-toggle{
+    margin-top:15px;
+    border:none;
+}
+#main{
+    width:450px;
+    margin-top:50px;
+    border:1px solid  #d3d3d3;
+    display:block;
+}
+img{
+    float:right;
+    margin-right:120px;
+}
+.inputbutton{
+    width:320px;
+    margin-top:20px;
+    color:#fff;
+    background-color:#6994A5;
+    border:none;
+    height: 40px;
+    font-family: 'Avenir Medium';
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+}
+.createButton{
+    width: 380px;
+    margin-top:20px;
+    color:#fff;
+    background-color:#6994A5;
+    border:none;
+    height: 60px;
+    margin:0 auto;
+    display: block;
+    font-size: 20px;
+    font-family: 'Avenir Medium';
+    line-height: normal;
+}
+.finalButton{
+    width:320px;
+    margin-top:20px;
+    color:#fff;
+    background-color:#6994A5;
+    border:none;
+    height: 40px;
+    margin:0 auto;
+    display: block;
+    font-family: 'Avenir Medium';
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    margin-bottom: 50px;
+}
+.line{
+    border-bottom : 1px solid #d3d3d3;
+    padding-bottom : 20px;
+    padding-top: 20px;
+}
+.application{
+    margin-bottom: 30px;
+}
+.input{
+    width:320px;
+    height: 40px;
+}
+.login{
+    text-align: center;
+    color:#6994A5;
+    font-size: 33px;
+    font-family: 'Avenir Book';
+    font-weight: bold;
+}
+.application{
+    text-align: center;
+    color:#6994A5;
+    margin-top:20px;
+    font-family: 'Avenir Book';
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+}
+.firstSpan{
+    margin-left: 100px;
+    font-family: 'Avenir Medium';
+}
+.loginForm{
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left:20px;
+}
+.loginFormapplication{
+    margin-top:30px;
+    margin-bottom:50px;
+    margin-left:20px;
+}
+.loginSection{
+margin:auto;
+padding:20px;
+}
+#loginSection{
+    display:block
+}
+#rmSection{
+    display: none;
+}
+#thankSection{
+    display: none;
+}
+.rmSection{
+    margin:auto;
+    padding:20px;
+    display:none;
+}
+label{
+    height: 19px;
+    font-family: 'Avenir Medium';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    color:#646464;
+}
+.rmjourney{
+  font-family: 'Avenir Book';
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #f17b20;
+  border-bottom:3px solid #f17b20;
+  margin-left: 190px;
+  cursor: pointer;
+}
+.diyjourney{font-family: 'Avenir Book';font-size: 20px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: -0.4px;color: #646464;border-bottom:3px solid #d3d3d3;margin-left:15px;cursor:pointer;}
+#para{
+    margin: 29px 29px 10px 30px;
+    font-family: 'Avenir Book';
+    font-size: 22px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    color: #6994a5;
+}
+#para2{
+    margin: 10px 106px 40px;
+    font-family: 'Avenir Medium';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    color: #646464;
+}
+#msg{
+  font-family: 'Avenir Medium';
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  color: #646464;
+  padding-bottom:40px;
+}
+#emailIdfinal{
+  margin-left:5px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  color: #646464;
+  font-weight: bolder;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #6994A5;
+    white-space: nowrap;
+}
+#loginDropDown{
+    display: block;
+}
+#merchantName{
+    display: none;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -145px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 80%;
+  font-size: 17px;
+  margin-top:20px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 2.5s, fadeout 0.5s 2.5s;
+  animation: fadein 2.5s, fadeout 0.5s 2.5s;
+}
+
+.error{
+    color:red;
+}
+input{
+    border-style : solid;
+}
+/* @-webkit-keyframes fadein {
+  top: 0; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+} */
