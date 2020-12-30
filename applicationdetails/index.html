@@ -86,12 +86,12 @@
                           <div class="loginFormapplication">
                             <div class="col-md-6">
                                <div class="form-group">
-                                    <label for="exampleInputEmail1" id="rmName">RM Name</label>
+                                    <label for="exampleInputEmail1" id="rmName">RM Name *</label>
                                     <input  class="input" type="text" class="form-control" id="rmNameValue"  aria-describedby="emailHelp" placeholder="">
                                     <span class="error" id="rmnameError"></span>
                                 </div>
                                <div class="form-group">
-                                    <label for="exampleInputPassword1" id="rmEmail" >RM Email ID</label>
+                                    <label for="exampleInputPassword1" id="rmEmail" >RM Email ID *</label>
                                     <input  class="input" type="email" class="form-control" id="rmemailValue"  placeholder="">
                                     <br>
                                     <span class="error" id="rmemailError"></span>
@@ -99,7 +99,7 @@
                             </div>
                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1" id="rmMobile">RM Mobile Number</label>
+                                        <label for="exampleInputEmail1" id="rmMobile">RM Mobile Number *</label>
                                         <input  class="input"  type="text" pattern="\d*" maxlength="10" class="form-control" id="rmMobileValue" length="10" aria-describedby="emailHelp" placeholder="">
                                         <br>
                                         <span class="error" id="moblieValue"></span>
@@ -111,7 +111,7 @@
                             <div class="loginFormapplication">
                             <div class="col-md-6" style="margin-bottom:30px;">
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1" >Create Application Login</label>
+                                  <label for="exampleInputEmail1" >Create Application Login *</label>
                                   <input  class="input" type="text" class="form-control" id="applicationLogin"  aria-describedby="emailHelp" placeholder=""
                                   disabled>
                                   <br>
@@ -120,7 +120,7 @@
                             </div>
                             <div class='col-md-6' style="margin-bottom:30px;">
                                 <div class="form-group">
-                                  <label for="exampleInputPassword1" >Create Application Password</label>
+                                  <label for="exampleInputPassword1" >Create Application Password *</label>
                                   <input  class="input" type="password" class="form-control" id="applicationPassword"  placeholder="">
                                   <br>
                                   <span class="error" id="rmPassworderror"></span>
@@ -140,7 +140,7 @@
                     <div class="col-lg-12">
                     <p id="para">Application Credentials Created !</p>
                     <div>
-                        <p id="msg">To start the onboarding ourney, click on the link sent to:<span class="bold" id="emailIdfinal"></span></p>
+                        <p id="msg">To start the onboarding journey, click on the link sent to:<span class="bold" id="emailIdfinal"></span></p>
                     </div>
                     </div>
                     <button  class="finalButton" type="submit" class="btn btn-primary" onclick="createAnotherapplication()" >Create Another Application</button>
@@ -251,7 +251,14 @@
                            const userdate = username + dateString;
                            var hour = currentDate.getHours().toString();
                            var minute = currentDate.getMinutes().toString();
-                           var second = currentDate.getSeconds().toString();
+                           var minute = currentDate.getMinutes().toString();
+                          if(minute.length == 1){
+                            var updateMinute = "0" + minute;
+                         }
+                           else {
+                              var updateMinute = minute;
+                          }
+                         var second = currentDate.getSeconds().toString();
                            var time = hour + minute + second ;
                            document.getElementById('applicationLogin').value = userdate + time;
                         }
@@ -279,7 +286,6 @@
                 document.getElementById('rmEmail').innerHTML = 'Client Email ID';
                 document.getElementById('rmMobile').innerHTML = 'Client Mobile Number';
                 document.getElementById('merchantButton').innerText = 'Create Client Application';
-    
             } else {
                 document.getElementById('rmjourney').style.borderBottom = '3px solid #f17b20';
                 document.getElementById('rmjourney').style.color = '#f17b20';
@@ -289,7 +295,6 @@
                 document.getElementById('rmEmail').innerHTML = 'RM Email ID';
                 document.getElementById('rmMobile').innerHTML = 'RM Mobile Number';
                 document.getElementById('merchantButton').innerText = 'Create RM Assisted Application';
-
             }
         }
     
@@ -301,18 +306,18 @@
             let username  = document.getElementById('applicationLogin').value;
             let password = document.getElementById('applicationPassword').value;
             if(mobile && email && name && username  && password) {
-            if(mobile.length != 10){
+                    if(mobile.length != 10){
                 document.getElementById('moblieValue').innerText = 'Please enter valid Moblie Number';
                 document.getElementById('rmemailError').innerText = '';
                 document.getElementById('rmnameError').innerText = '';
                 document.getElementById('applicationError').innerText ='';
                 document.getElementById('rmPassworderror').innerText = '';
                 document.getElementById('rmemailValue').style.borderColor = '#646464';   
-            }else{
-            let loginStorage = JSON.parse(localStorage.getItem('wealthLogin'));
-            let applicationId = loginStorage.data.applicationId;
-            let authorization = loginStorage.id;
-            let merchantData = JSON.stringify({
+             }    else{
+                let loginStorage = JSON.parse(localStorage.getItem('wealthLogin'));
+                let applicationId = loginStorage.data.applicationId;
+                let authorization = loginStorage.id;
+                let merchantData = JSON.stringify({
                          "mobile": document.getElementById('rmMobileValue').value,
                          "email" : document.getElementById('rmemailValue').value,
                          "name": document.getElementById('rmNameValue').value,
@@ -343,11 +348,20 @@
                 })
                     .done(function (result) {
                         if (result) {
+                            document.getElementById('rmnameError').innerText = '';
+                            document.getElementById('rmNameValue').style.borderColor = '#646464'; 
+                            document.getElementById('moblieValue').innerText = '';
+                            document.getElementById('rmMobileValue').style.borderColor = '#646464';   
+                            document.getElementById('rmemailError').innerText = '';
+                            document.getElementById('rmemailValue').style.borderColor ='#646464';
+                            document.getElementById('rmPassworderror').innerText = '';
+                            document.getElementById('applicationPassword').style.borderColor = "#646464";
                             localStorage.setItem('merchantData', JSON.stringify(result.response))
                             document.getElementById('rmSection').style.display = 'none';
                             document.getElementById('thankSection').style.display = 'block';
+                            let data = JSON.parse(localStorage.getItem('userName'))
                             document.getElementById('emailIdfinal').innerText = document.getElementById('rmemailValue').value;
-                            document.getElementById('menu2').innerText = document.getElementById('rmemailValue').value;
+                            document.getElementById('menu2').innerText = data;
                         }
                         else {
                             localStorage.setItem('leadStoreDB', JSON.stringify(result.response))
@@ -356,52 +370,31 @@
                     });
             }
             }
-            // else if( !mobile && !email && !name && !username && !password){
-            //     document.getElementById('rmemailValue').style.borderColor = 'red';         
-            //     document.getElementById('rmemailError').innerText = 'Please enter a valid Email Id';
-            //     document.getElementById('moblieValue').innerText = 'Please enter a Moblie Number';
-            //     document.getElementById('rmMobileValue').style.borderColor = 'red';
-            //     document.getElementById('rmnameError').innerText = 'Please enter a name';
-            //     document.getElementById('rmNameValue').style.borderColor ='red';
-            //     document.getElementById('applicationLogin').style.borderColor ="red";
-            //     document.getElementById('applicationError').innerText = 'Application login must be minimum 3 characters, with an alphabet as the first character and must contain a number.';
-            //     document.getElementById('applicationPassword').style.borderColor = "red";
-            //     document.getElementById('rmPassworderror').innerText = 'Please enter a password';
-            // }
-            else if(!name){
-                document.getElementById('moblieValue').innerText = '';
-                document.getElementById('rmemailError').innerText = '';
-                document.getElementById('applicationError').innerText ='';
-                document.getElementById('rmnameError').innerText = 'Please enter a name';
-                document.getElementById('rmPassworderror').innerText = '';
+
+
+            else{
+            document.getElementById('rmnameError').innerText = '';
+            document.getElementById('rmNameValue').style.borderColor = '#646464'; 
+            document.getElementById('moblieValue').innerText = '';
+            document.getElementById('rmMobileValue').style.borderColor = '#646464';   
+            document.getElementById('rmemailError').innerText = '';
+            document.getElementById('rmemailValue').style.borderColor ='#646464';
+            document.getElementById('rmPassworderror').innerText = '';
+            document.getElementById('applicationPassword').style.borderColor = "#646464";
+            if(!name){
+                document.getElementById('rmnameError').innerText = 'Please enter a valid name';
                 document.getElementById('rmNameValue').style.borderColor = 'red';         
             }
-            else if(!mobile ){
-                   document.getElementById('moblieValue').innerText = 'Please enter a Moblie Number';
-                   document.getElementById('rmemailError').innerText = '';
-                   document.getElementById('rmnameError').innerText = '';
-                   document.getElementById('applicationError').innerText ='';
-                   document.getElementById('rmPassworderror').innerText = '';
-                   document.getElementById('rmNameValue').style.borderColor = '#646464';         
-            }else if(!email){
+            if(!mobile || !mobile.length == '10' ){
+                   document.getElementById('moblieValue').innerText = 'Please enter a valid mobile number'
+                   document.getElementById('rmMobileValue').style.borderColor = 'red';         
+            }if(!email){
                 document.getElementById('rmemailError').innerText = 'Please enter a valid Email Id';
-                document.getElementById('moblieValue').innerText = '';
-                document.getElementById('rmnameError').innerText = '';
-                document.getElementById('applicationError').innerText = '';
-                document.getElementById('rmPassworderror').innerText = '';
-                document.getElementById('rmMobileValue').style.borderColor ='#646464';
-            }else if(!username){
-                document.getElementById('applicationError').innerText = 'Application login must be minimum 3 characters, with an alphabet as the first character and must contain a number.'
-                document.getElementById('moblieValue').innerText = '';
-                document.getElementById('rmemailError').innerText = '';
-                document.getElementById('rmnameError').innerText  = '';
-                document.getElementById('rmPassworderror').innerText = '';
-            }else if(!password){
-                document.getElementById('moblieValue').innerText = '';
-                document.getElementById('rmemailError').innerText = '';
-                document.getElementById('rmnameError').innerText  = '';
-                document.getElementById('applicationError').innerText = '';
-                document.getElementById('rmPassworderror').innerText = 'Please enter a password';
+                document.getElementById('rmemailValue').style.borderColor ='red';
+            }if(!password){
+                document.getElementById('rmPassworderror').innerText = 'Please enter a valid password';
+                document.getElementById('applicationPassword').style.borderColor = "red";
+            }
             }
 
         }
@@ -409,6 +402,8 @@
         function createAnotherapplication() {
              document.getElementById('thankSection').style.display = 'none';
              document.getElementById('rmSection').style.display = 'block';
+             document.getElementById('rmPassworderror').innerText ='';
+             document.getElementById('applicationPassword').value  = '';
              let newUser = JSON.parse(localStorage.getItem('userName'));
              if( newUser ){
                  const username = newUser;
@@ -422,8 +417,14 @@
                  const userdate = username + dateString;
                  var hour = currentDate.getHours().toString();
                  var minute = currentDate.getMinutes().toString();
+                 if(minute.length == 1){
+                     var updateMinute = "0" + minute;
+                 }
+                 else {
+                     var updateMinute = minute;
+                 }
                  var second = currentDate.getSeconds().toString();
-                 var time = hour + minute + second ;
+                 var time = hour + updateMinute + second ;
                  document.getElementById('applicationLogin').value = userdate + time;
             }
         }
