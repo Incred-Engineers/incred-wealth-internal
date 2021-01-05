@@ -458,5 +458,10 @@ margin-left: -170px;
 @media (min-width: 1200px){
 .container {
     width: 800px;
+    border: 1px solid gray;
+}
+img{
+    float:right;
+    margin-right:120px;
 }
 }
