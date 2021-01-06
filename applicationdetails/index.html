@@ -243,13 +243,33 @@
                            localStorage.setItem('userName',JSON.stringify(result.data.username));
                            const currentDate = new Date();
                            const currentDayOfMonth = currentDate.getDate();
+                           var date = currentDayOfMonth.toString()
+                           if(date.length == 1){
+                            var updateDate = "0" + date;
+                         }
+                           else {
+                              var updateDate = date;
+                          }
                            const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+                           var month1 = (currentMonth+1).toString()
+                           if(month1.length == 1){
+                            var updateMonth = "0" + month1;
+                         }
+                           else {
+                              var updateMonth = month1;
+                          }
                            const currentYear = currentDate.getFullYear();
                            let month = (currentMonth + 1).toString();
                            let year = currentYear.toString();
-                           const dateString = currentDayOfMonth.toString() + month  + year;
+                           const dateString = updateDate.toString() + updateMonth  + year;
                            const userdate = username + dateString;
                            var hour = currentDate.getHours().toString();
+                           if(hour.length == 1){
+                            var updateHour = "0" + hour;
+                         }
+                           else {
+                              var updateHour = hour;
+                          }
                            var minute = currentDate.getMinutes().toString();
                            var minute = currentDate.getMinutes().toString();
                           if(minute.length == 1){
@@ -409,13 +429,32 @@
                  const username = newUser;
                  const currentDate = new Date();
                  const currentDayOfMonth = currentDate.getDate();
+                 var date = currentDayOfMonth.toString()
+                 if(date.length == 1){
+                            var updateDate = "0" + date;
+                         }
+                           else {
+                              var updateDate = date;
+                          }
                  const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
                  const currentYear = currentDate.getFullYear();
-                 let month = (currentMonth + 1).toString();
+                 let month = (currentMonth).toString();
+                 if(month.length == 1){
+                            var updateMonth = "0" + month;
+                         }
+                           else {
+                              var updateMonth = month;
+                          }
                  let year = currentYear.toString();
-                 const dateString = currentDayOfMonth.toString() + month  + year;
+                 const dateString = updateDate.toString() + updateMonth  + year;
                  const userdate = username + dateString;
                  var hour = currentDate.getHours().toString();
+                 if(hour.length==1){
+                     var updateHour = "0" + hour;
+                 }
+                 else{
+                     var updateHour = hour;
+                 }
                  var minute = currentDate.getMinutes().toString();
                  if(minute.length == 1){
                      var updateMinute = "0" + minute;
