@@ -106,6 +106,7 @@ p.copy {
     font-size: 33px;
     font-family: 'Avenir Book';
     font-weight: bold;
+    margin-left: -30px;
 }
 .application{
     text-align: center;
@@ -118,7 +119,7 @@ p.copy {
     font-style: normal;
 }
 .firstSpan{
-    margin-left: 100px;
+    margin-left: 90px;
     font-family: 'Avenir Medium';
 }
 .loginForm{
@@ -172,7 +173,7 @@ label{
 }
 .diyjourney{font-family: 'Avenir Book';font-size: 20px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: -0.4px;color: #646464;border-bottom:3px solid #d3d3d3;margin-left:15px;cursor:pointer;}
 #para{
-    margin: 15px 29px 10px 30px;
+    margin: 15px 29px 10px 26px;
     font-family: 'Avenir Book';
     font-size: 22px;
     font-weight: bold;
@@ -201,6 +202,8 @@ label{
   letter-spacing: -0.32px;
   color: #646464;
   padding-bottom:40px;
+  width: 340px;
+  margin-left: 15px;
 }
 #emailIdfinal{
   margin-left:5px;
@@ -374,12 +377,11 @@ and (max-device-width : 640px){
         }
     .logo{
 
-margin-left: 100px;
-
+margin-left: 80px;
 }
     .drop{
     
-margin-left: 115px;
+margin-left: 90px;
     }
     .rm {
 
