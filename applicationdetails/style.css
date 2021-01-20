@@ -400,7 +400,7 @@ and (max-width: 1605px){
         }
     img{
         float:right;
-        margin-right:120px;
+        margin-right:150px;
     }
 }
 
@@ -464,6 +464,9 @@ margin-left: -170px;
 }
 img{
     float:right;
-    margin-right:120px;
+    margin-right: 150px;
+}
+.drop{
+    margin-left: -35px;
 }
 }
