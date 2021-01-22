@@ -279,6 +279,9 @@ input{
   from {top: 30px; opacity: 1;}
   to {top: 0; opacity: 0;}
 } */
+@media (min-width: 992px){
+    .logo img{position: absolute;left: 60%;right: 50%;width: 30%;height: auto;margin-top: 0px;}
+}  
 @media only screen   
 and (min-device-width : 768px)   
 and (max-device-width : 1024px){
@@ -469,5 +472,6 @@ img{
 .logo img{position: absolute;left: 60%;right: 50%;width: 30%;height: auto;margin-top: 0px;}
 .drop{
     margin-left: -35px;
+    margin-top: 10px;
 }
 }
