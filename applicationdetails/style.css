@@ -466,6 +466,7 @@ img{
     float:right;
     margin-right: 150px;
 }
+.logo img{position: absolute;left: 60%;right: 50%;width: 30%;height: auto;margin-top: 0px;}
 .drop{
     margin-left: -35px;
 }
