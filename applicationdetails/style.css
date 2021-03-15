@@ -476,3 +476,7 @@ img{
     margin-top: 10px;
 }
 }
+
+#merchantButton1{
+    display: none;
+}

@@ -127,7 +127,9 @@
  </div>
  </div>
  <button class="createButton" type="submit" class="btn btn-primary" id="merchantButton" 
- onclick="createApplication()" value="" ></button>
+ onclick="createApplication('rms')" value="" ></button>
+ <button class="createButton" type="submit" class="btn btn-primary" id="merchantButton1" 
+ onclick="createApplication('client')" value="" ></button>
  </div>
  </div>
  </div>
@@ -314,7 +316,10 @@
  document.getElementById('rmName').innerHTML = 'Client Name *';
  document.getElementById('rmEmail').innerHTML = 'Client Email ID *';
  document.getElementById('rmMobile').innerHTML = 'Client Mobile Number *';
- document.getElementById('merchantButton').innerText = 'Create Client Application';
+ document.getElementById('merchantButton1').innerText = 'Create Client Application';
+ document.getElementById('merchantButton1').style.display = 'block';
+ document.getElementById('merchantButton').style.display = 'none';
+
  } else {
  document.getElementById('rmjourney').style.borderBottom = '3px solid #f17b20';
  document.getElementById('rmjourney').style.color = '#f17b20';
@@ -324,11 +329,13 @@
  document.getElementById('rmEmail').innerHTML = 'RM Email ID *';
  document.getElementById('rmMobile').innerHTML = 'RM Mobile Number *' ;
  document.getElementById('merchantButton').innerText = 'Create RM Assisted Application';
+ document.getElementById('merchantButton').style.display = 'block';
+ document.getElementById('merchantButton1').style.display = 'none';
  }
  }
  
  
- function createApplication() {
+ function createApplication(data) {
  let mobile = document.getElementById('rmMobileValue').value;
  let email = document.getElementById('rmemailValue').value;
  let name = document.getElementById('rmNameValue').value;
@@ -345,6 +352,15 @@
  } else{
  let loginStorage = JSON.parse(localStorage.getItem('wealthLogin'));
  let applicationId = loginStorage.data.applicationId;
+ console.log(data)
+ let flowId
+ if(data == "client"){
+     flowId = loginStorage.data.flowIds[0];
+ }
+ else
+ {
+     flowId = loginStorage.data.flowIds[1];
+ }
  let authorization = loginStorage.id;
  let merchantData = JSON.stringify({
  "mobile": document.getElementById('rmMobileValue').value,
@@ -352,7 +368,7 @@
  "name": document.getElementById('rmNameValue').value,
  "username": document.getElementById('applicationLogin').value,
  "password":document.getElementById('applicationPassword').value,
- "flowId":loginStorage.data.flowIds[0],
+ "flowId": flowId,
  "realm":loginStorage.data.realm
 
  })
