@@ -40,10 +40,10 @@ p.copy {
     border:1px solid  #d3d3d3;
     display:block;
 }
-img{
+/* img{
     float:right;
     margin-right:120px;
-}
+} */
 .inputbutton{
     width:320px;
     margin-top:20px;
@@ -106,6 +106,7 @@ img{
     font-size: 33px;
     font-family: 'Avenir Book';
     font-weight: bold;
+    margin-left: -30px;
 }
 .application{
     text-align: center;
@@ -118,7 +119,7 @@ img{
     font-style: normal;
 }
 .firstSpan{
-    margin-left: 100px;
+    margin-left: 90px;
     font-family: 'Avenir Medium';
 }
 .loginForm{
@@ -172,7 +173,7 @@ label{
 }
 .diyjourney{font-family: 'Avenir Book';font-size: 20px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: -0.4px;color: #646464;border-bottom:3px solid #d3d3d3;margin-left:15px;cursor:pointer;}
 #para{
-    margin: 15px 29px 10px 30px;
+    margin: 15px 29px 10px 26px;
     font-family: 'Avenir Book';
     font-size: 22px;
     font-weight: bold;
@@ -201,6 +202,8 @@ label{
   letter-spacing: -0.32px;
   color: #646464;
   padding-bottom:40px;
+  width: 340px;
+  margin-left: 15px;
 }
 #emailIdfinal{
   margin-left:5px;
@@ -276,3 +279,204 @@ input{
   from {top: 30px; opacity: 1;}
   to {top: 0; opacity: 0;}
 } */
+@media (min-width: 992px){
+    .logo img{position: absolute;left: 60%;right: 50%;width: 30%;height: auto;margin-top: 0px;}
+}  
+
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1024px){
+    .main{
+    width: 800px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    }
+img{
+    float:right;
+    margin-right:120px;
+}
+}
+
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1366px){
+    .main{
+        width: 800px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        }
+    img{
+        float:right;
+        margin-right: 80px;
+    }
+}
+
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 480px) {
+    .main{
+        width: 800px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        }
+    .logo{
+    margin-left: 50px;
+    }
+    .drop{
+    
+margin-left: 110px;
+    }
+    .rm {
+        
+margin-left: -170px;
+    }
+    .line {
+        margin-left: -20px;
+    }
+    .line1 {
+        margin-left: -20px;
+    }
+    .createButton {
+        width: 320px;
+        margin-top: 20px;
+        color: #fff;
+        background-color: #6994A5;
+        border: none;
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+        font-size: 20px;
+        font-family: 'Avenir Medium';
+        line-height: normal;
+    }
+}
+
+@media only screen   
+and (min-device-width : 360px)   
+and (max-device-width : 640px){
+    .main{
+        width: 410px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        margin-left: -20px;
+        }
+        .line{
+            margin-left: -20px;
+        }
+        .line1 {
+            margin-left: -20px;
+        }
+        .createButton {
+            width: 320px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #6994A5;
+            border: none;
+            height: 60px;
+            margin: 0 auto;
+            display: block;
+            font-size: 20px;
+            font-family: 'Avenir Medium';
+            line-height: normal;
+        }
+    .logo{
+
+margin-left: 80px;
+}
+    .drop{
+    
+margin-left: 90px;
+    }
+    .rm {
+
+margin-left: -170px;
+
+}
+}
+
+@media only screen   
+and (min-width: 1370px)  
+and (max-width: 1605px){
+    .main{
+        width: 800px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        }
+    img{
+        float:right;
+        margin-right:150px;
+    }
+}
+
+@media only screen   
+and (orientation : landscape)   
+and (-webkit-min-device-pixel-ratio: 1)  
+and (min-device-width : 768px)   
+and (max-device-width : 1007px){
+    .main{
+        width: 800px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) 
+and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71){
+    .main{
+        width: 410px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        margin-left: -20px;
+        }
+        .line{
+            margin-left: -20px;
+        }
+        .line1 {
+            margin-left: -20px;
+        }
+        .createButton {
+            width: 320px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #6994A5;
+            border: none;
+            height: 60px;
+            margin: 0 auto;
+            display: block;
+            font-size: 20px;
+            font-family: 'Avenir Medium';
+            line-height: normal;
+        }
+    .logo{
+
+margin-left: 100px;
+
+}
+    .drop{
+    
+margin-left: 115px;
+    }
+    .rm {
+
+margin-left: -170px;
+
+}
+}
+@media (min-width: 1200px){
+.container {
+    width: 800px;
+    border: 1px solid gray;
+}
+img{
+    float:right;
+    margin-right: 150px;
+}
+.logo img{position: absolute;left: 60%;right: 50%;width: 30%;height: auto;margin-top: 0px;}
+.drop{
+    margin-left: -35px;
+    margin-top: 10px;
+}
+}
+
+#merchantButton1{
+    display: none;
+}
