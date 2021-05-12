@@ -28,8 +28,8 @@
  <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">RM Login For Onboarding
  <span class="caret"></span></button>
  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
- <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go-preproduction.signzy.app/incred_wealth/login">Admin Dashboard</a></li>
- <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go-preproduction.signzy.app/incred_wealth/login">RM App Dashboard</a></li>
+ <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go.onboardings.co/incred_wealth/login">Admin Dashboard</a></li>
+ <li role="presentation"><a role="menuitem" tabindex="-1" href="https://backops-go.onboardings.co/incred_wealth/login">RM App Dashboard</a></li>
  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">RM Login For Onboarding</a></li>
  </ul>
  </div>
@@ -208,7 +208,7 @@
  "password": document.getElementById('InputPassword1').value,
  "realm": "incred_wealth"
  });
- let url = "https://go-preproduction.signzy.app/api/backopsusers/login"
+ let url = "https://go.onboardings.co/api/backopsusers/login"
  $.ajax(url, {
  crossDomain: true,
  method: 'POST',
@@ -374,7 +374,7 @@
 
  })
 
- let url = `https://go-preproduction.signzy.app/api/applications/${applicationId}/merchants`
+ let url = `https://go.onboardings.co/api/applications/${applicationId}/merchants`
  $.ajax(url, {
  crossDomain: true,
  method: 'POST',
